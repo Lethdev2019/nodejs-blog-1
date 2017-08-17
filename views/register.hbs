@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {{>header_assets}}
+</head>
+
+<body>
+<div class="wrapper-page">
+    <div class="m-t-40 card-box">
+        <div class="text-center">
+            <h4 class="text-uppercase font-bold m-b-0">Register</h4>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal m-t-20" id="jsSignUpForm">
+
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control required js_user_name" type="text" required="" placeholder="Full Name">
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control required js_user_email" type="email" required="" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control required js_user_password" type="password" required="" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="checkbox checkbox-custom">
+                            <input id="checkbox-signup" type="checkbox" checked="checked">
+                            <label for="checkbox-signup">I accept
+                                <a href="#">Terms and Conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center m-t-40">
+                    <div class="col-xs-12">
+                        <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">
+                            Register
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group text-center m-t-40 js_server_error hide">
+                    <div class="col-xs-12">
+                        <p class="js_server_error_msg"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end card-box -->
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p class="text-muted">Already have account?
+                <a href="/login" class="text-primary m-l-5"><b>Sign In</b></a>
+            </p>
+        </div>
+    </div>
+</div>
+{{>footer_assets}}
+<script type="text/javascript">
+    $(window).load(function () {
+        LoginPage.initSignUp();
+    });
+</script>
+</body>
+
+</html>

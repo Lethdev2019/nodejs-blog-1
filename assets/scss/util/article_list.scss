@@ -1,0 +1,115 @@
+.blog_article {
+    &_sec {
+        background: #F7F7F7;
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        .sec_title {
+            font-family: $header_txt_font;
+            text-align: center;
+            margin: 0 0 70px 0;
+            font-size: 46px;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            word-spacing: 10px;
+            position: relative;
+            padding: 0 0 20px 0;
+            color: #000;
+
+            &:after {
+                content: '';
+                height: 1px;
+                width: 200px;
+                background: $border_color_1;
+                position: absolute;
+                bottom: 0;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+            }
+
+        }
+        .cta_wrap {
+            padding-top: 60px;
+            text-align: center;
+
+            .cta {
+                background: $brand_color_2;
+                border: 1px solid $brand_color_2;
+                border-radius: 100px;
+                display: inline-block;
+                text-align: center;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: 700;
+                outline: none;
+                padding: 13px 40px;
+                text-decoration: none;
+            }
+        }
+        .img_wrap {
+            display: block;
+            min-height: 200px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .more-link {
+            display: none;
+        }
+        .details_wrap {
+            padding: 25px 15px;
+            background: #fff;
+            text-align: left;
+
+            .title {
+                font-weight: 600;
+                font-size: 18px;
+                color: #000;
+                margin: 0;
+                padding: 0;
+                line-height: 1.4;
+
+                a {
+                    color: $text_color_2;
+                }
+            }
+            .author {
+                color: $brand_color_1;
+                font-size: 16px;
+                font-weight: 300;
+                text-transform: capitalize;
+                padding: 15px 0 0 0;
+            }
+            .tag {
+                color: $brand_color_1;
+                font-size: 14px;
+                font-weight: 300;
+                padding: 5px 0 20px 0;
+            }
+            .desc {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.8;
+                color: $text_color_1;
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .article_list {
+        .article {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .article_list {
+        .article {
+            margin-bottom: 40px;
+        }
+    }
+}

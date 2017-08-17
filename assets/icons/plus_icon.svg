@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>plus_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="plus_icon" transform="translate(1.000000, 1.000000)" stroke="#444444" stroke-width="2">
+            <path d="M18,12 L18,24" id="Stroke-239"></path>
+            <path d="M24,18 L12,18" id="Stroke-240"></path>
+            <path d="M17.5,0 C27.1648611,0 35,7.83513889 35,17.5 C35,27.1648611 27.1648611,35 17.5,35 C7.83513889,35 0,27.1648611 0,17.5 C0,7.83513889 7.83513889,0 17.5,0 L17.5,0 Z" id="Stroke-150-Copy"></path>
+        </g>
+    </g>
+</svg>

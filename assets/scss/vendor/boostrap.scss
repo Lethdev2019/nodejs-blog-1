@@ -1,0 +1,33 @@
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+    content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+    float: right; /* adjust as needed */
+    color: grey; /* adjust as needed */
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+}
+
+.btn-success {
+    background-color: $brand_color_1;
+    border-color: $brand_color_1;
+    box-shadow: none;
+    @include transition(all ease-in-out, .25s);
+
+    &:hover, &:visited, &:active, &:focus, &:active, &:active:hover {
+        background-color: $brand_color_2;
+        border-color: $brand_color_2;
+        @include transition(all ease-in-out, .25s);
+        box-shadow: none;
+        outline: none;
+    }
+
+    &.btn-lg {
+        padding: 12px 35px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}

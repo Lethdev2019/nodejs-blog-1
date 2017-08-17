@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog editor</title>
+    {{>header_assets}}
+</head>
+
+<body>
+
+<section class="blog_form_sec js_blog_form_sec">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="page-title">Blog basic details</h3>
+                <form id="blogBasicDetails" class="blog_basic_details_form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    URL:
+                                </label>
+                                <input type="text" class="form-control j_url required" value="{{data.url}}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    Title:
+                                </label>
+                                <input type="text" class="form-control j_title required" value="{{data.title}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    Meta Keywords:
+                                </label>
+                                <select class="js_tags form-control js_meta_keywords required" multiple="multiple">
+                                    {{#each data.meta_keywords}}
+                                        <option value="{{this}}" selected>{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    Tags:
+                                </label>
+                                <select class="js_tags form-control js_page_tags required" multiple="multiple">
+                                    {{#each data.tags}}
+                                        <option value="{{this}}" selected>{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    Small Description:
+                                </label>
+                                <textarea class="form-control js_desc required">{{data.small_desc}}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    Cover Image:
+                                </label>
+                                <input type="file" name="filePhoto" id="filePhoto"
+                                       class="form-control borrowerImageFile"
+                                       data-errormsg="PhotoUploadErrorMsg">
+                                <img id="previewHolder" alt="Uploaded Image Preview Holder" height="250px"
+                                     class="{{#if data.cover_img}}{{else}}hide{{/if}}" src="{{data.cover_img}}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group js_server_error hide">
+                        <label>&nbsp;</label>
+                        <div class="server_error_msg js_error"></div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="close_drawer active" title="Toggle other details">
+        <span class="icon_wrap js_close_drawer">
+            <i class="fa fa-angle-double-up"></i>
+        </span>
+    </div>
+</section>
+<section class="blog_editor_sec_wrap">
+    <div class="container blog_editor_sec">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="title">
+                    {{{data.desc}}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog_cta_sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-right">
+                <button class="btn btn-lg btn-success js_publish_blog">Publish</button>
+                <input type="hidden" class="js_blog_id" value="{{data._id}}">
+            </div>
+        </div>
+    </div>
+</section>
+{{>footer_assets}}
+<script type="text/javascript">
+    $(function () {
+        {{#if data}}
+            BlogEditorPage.initEdit();
+        {{else}}
+            BlogEditorPage.init();
+        {{/if}}
+    });
+</script>
+</body>
+
+</html>

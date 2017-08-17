@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add featured blog</title>
+    {{>header_assets}}
+</head>
+
+<body>
+
+<section>
+    <div class="container">
+        {{>header class="normal" logo="logo-normal"}}
+        <div class="row">
+            <form class="row modern_form" id="jsForm">
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>
+                            Title
+                        </label>
+                        <input type="text" class="form-control js_heading" value="{{data.title}}">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Blogs
+                        </label>
+                        <select class="js_blogs form-control js_meta_keywords required" multiple="multiple">
+                            {{#each blogs}}
+                                <option
+                                        value="{{this._id}}"
+                                        {{#checkContainsOf ../data.blogs this._id}}selected{{/checkContainsOf}}>
+                                    {{this.title}}
+                                </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group cta_sec">
+                        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+                        <input type="hidden" class="js_id" value="{{data._id}}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{{>footer_assets}}
+<script type="text/javascript">
+    $(window).load(function () {
+        {{#if data}}
+            FeaturedBlog.initEditForm();
+        {{else}}
+            FeaturedBlog.init();
+        {{/if}}
+    });
+</script>
+</body>
+
+</html>

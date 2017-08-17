@@ -1,0 +1,172 @@
+.page_header {
+    .navbar {
+        margin: 0;
+    }
+}
+.navbar.transparent {
+    padding: 25px 0;
+    border-radius: 0;
+    border: 0;
+
+    a {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        padding: 10px 25px;
+        transition: all 0.2s ease-in-out;
+        &:after {
+            content: '';
+            height: 70%;
+            top: 15%;
+            width: 1px;
+            background: hsla(0, 0%, 100%, 0.29);
+            position: absolute;
+            right: 0;
+        }
+        &:before {
+            transition: all 0.2s ease-in-out;
+            content: '';
+            height: 4px;
+            width: 0;
+            background: $brand_color_1;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+        &.no_br {
+            &:after {
+                display: none;
+            }
+        }
+        &.no_br_ani {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    li.active a,
+    a:hover {
+        color: #fff;
+        &:before {
+            transition: all 0.2s ease-in-out;
+            content: '';
+            height: 4px;
+            width: 60%;
+            left: 20%;
+            background: $brand_color_1;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    a.navbar-brand {
+        font-size: 26px;
+        color: #fff;
+        padding: 0;
+    }
+    li.hightlight {
+    }
+    li.hightlight a {
+        color: #fff;
+        :hover {
+            color: #fff;
+        }
+    }
+    .nav > li > a:focus,
+    .nav > li > a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+}
+
+.navbar.normal {
+    padding: 20px 0 10px 0;
+    border-radius: 0;
+
+    a {
+        color: #555;
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        padding: 10px 25px;
+        transition: all 0.2s ease-in-out;
+        &:after {
+            content: '';
+            height: 70%;
+            top: 15%;
+            width: 1px;
+            background: hsla(0, 2%, 9%, 0.29);
+            position: absolute;
+            right: 0;
+        }
+        &:before {
+            transition: all 0.2s ease-in-out;
+            content: '';
+            height: 4px;
+            width: 0;
+            background: $brand_color_1;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+        &.no_br {
+            &:after {
+                display: none;
+            }
+        }
+        &.no_br_ani {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    li.active a,
+    a:hover {
+        color: #555;
+        &:before {
+            transition: all 0.2s ease-in-out;
+            content: '';
+            height: 4px;
+            width: 60%;
+            left: 20%;
+            background: $brand_color_1;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    a.navbar-brand {
+        font-size: 26px;
+        color: #555;
+        padding: 0;
+    }
+    li.hightlight {
+    }
+    li.hightlight a {
+        color: #555;
+        :hover {
+            color: #555;
+        }
+    }
+    .nav > li > a:focus,
+    .nav > li > a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    /* styles for browsers smaller than 680px; */
+    .navbar.transparent a:hover:before, .navbar.transparent li.active a:before {
+        left: 24px;
+    }
+    .navbar.transparent li a:after {
+        display: none;
+    }
+
+    .navbar.normal a:hover:before, .navbar.normal li.active a:before {
+        left: 24px;
+    }
+    .navbar.normal li a:after {
+        display: none;
+    }
+}
